@@ -14,3 +14,19 @@
 # there are 10 matches in the championship
 # 0 <= x <= 4
 # 0 <= y <= 4
+
+
+# Solution 1
+def total_points(scorelist):
+    total = 0;
+
+    for score in scorelist:
+        scores = score.split(':')
+        x = scores[0]
+        y = scores[1]
+
+        if x>y:
+            total += 3
+        elif x=y:
+            total += 1
+    return total
