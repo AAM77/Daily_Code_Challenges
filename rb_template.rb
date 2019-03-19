@@ -1,9 +1,9 @@
-# Name: [Challenge Name]
-# Difficulty: [(e.g. 8 kyu, 7 kyu, easy, medium, 6 kyu, etc.)]
+# Name: 
+# Difficulty:
 #
 # --- sources ---
-# Website: [(e.g. CodeWars, LeetCode, HackerRank, etc.)]
-# URL: [(e.g. https://...)]
+# Website:
+# URL:
 #
 #
 #
