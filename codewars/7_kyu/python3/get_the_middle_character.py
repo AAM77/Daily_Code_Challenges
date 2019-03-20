@@ -64,3 +64,14 @@ def get_middle(s):
         return "{}{}".format(s[hlf_lngth - 1], s[hlf_lngth])
     else:
         return "{}".format(s[hlf_lngth])
+
+
+#***********#
+# Attempt 2 #
+#***********#
+
+def get_middle(s):
+    from math import floor
+
+    hlf_lngth = int(floor(len(s)/2))
+    return "{}{}".format(s[hlf_lngth - 1], s[hlf_lngth]) if len(s)%2 == 0 else "{}".format(s[hlf_lngth])
