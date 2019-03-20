@@ -65,3 +65,13 @@ function getMiddle(s)
     return `${s[halfLength]}`
   }
 }
+
+//***********//
+// Attempt 2 //
+//***********//
+
+function getMiddle(s)
+{
+  const halfLength = Math.floor(s.length/2)
+  return s.length%2 === 0 ? `${s[halfLength-1]}${s[halfLength]}` : `${s[halfLength]}`
+}
