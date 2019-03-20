@@ -1,4 +1,4 @@
-# Name: 
+# Name:
 # Difficulty:
 #
 # --- sources ---
@@ -6,7 +6,7 @@
 # URL:
 #
 #
-#
+
 ##################
 #                #
 #  Instructions  #
