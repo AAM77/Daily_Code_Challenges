@@ -155,3 +155,42 @@ def validBraces(braces)
     false
   end
 end
+
+# REFACTORED#
+#***********#
+# Attempt 3 # (Adeel)
+#***********#
+# (05-14-2019)
+
+def validBraces(braces)
+
+  # iterate through the array
+  # push each opening brace into a new array called brace_stack (it is now in position n)
+  # but, if the next brace is a closing brace:
+    # if it is the complement of the opening brace in position n (brace_stack[n], then
+      # pop off the brace in position n
+
+    # else (if it is not a complement)
+      # return false
+
+  # once the iteration is done, check to see if the stack array is empty
+  # if yes, return true. If no, return false
+
+  braces_stack = []
+
+  braces_hash = {
+    ')':'(',
+    '}':'{',
+    ']':'['
+  }
+
+  braces.split('').each do |brace|
+    if brace == '(' || brace == '{' || brace == '['
+      braces_stack.push(brace)
+    else
+      braces_stack[braces_stack.length - 1] == braces_hash[brace.to_sym] ? braces_stack.pop : (return false)
+    end
+  end
+
+  braces_stack.empty? ? true : false
+end
