@@ -194,3 +194,41 @@ def validBraces(braces)
 
   braces_stack.empty? ? true : false
 end
+
+
+# JAVASCRIPT #
+#***********#
+# Attempt 4 # (Adeel)
+#***********#
+# (05-14-2019)
+
+
+
+# function validBraces(braces){
+#   let brace_stack = [];
+#   let innerBreak;
+#
+#   const brace_types = {
+#     ')':'(',
+#     '}':'{',
+#     ']':'['
+#   };
+#
+#   braces.split('').forEach( brace => {
+#     if (brace === '(' || brace === '{' || brace === '[') {
+#       brace_stack.push(brace);
+#     }
+#
+#     else {
+#       (brace_stack[brace_stack.length - 1] === brace_types[brace]) ? brace_stack.pop() : innerBreak = false;
+#     }
+#   });
+#
+#   if (innerBreak === false) {
+#     return false;
+#   } else if (brace_stack.length === 0) {
+#     return true;
+#   }
+#
+#   return false;
+# }
