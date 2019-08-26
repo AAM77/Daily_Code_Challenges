@@ -61,3 +61,34 @@ def nextVersion(version)
   end
 
 end
+
+##############
+# Refactor 1 #
+##############
+
+def nextVersion(version)
+
+  current_version = version.split('.').reverse;
+
+  if version.split('.').length == 1
+    (version.to_i + 1).to_s
+  else
+    current_version.map.with_index do |n,i|
+      if i == 0
+        current_version[i] = (n.to_i + 1).to_s
+        if current_version[i] == '10'
+          current_version[i] = '0'
+          current_version[i+1] = (current_version[i+1].to_i + 1).to_s
+        end
+      else
+        if n == '10'
+          unless i == (current_version.length - 1)
+            current_version[i] = '0'
+            current_version[i+1] = (current_version[i+1].to_i + 1).to_s
+          end # unless
+        end # inner if
+      end # outer if
+    end # each
+    current_version.reverse.join('.')
+  end # outermost if
+end
