@@ -92,3 +92,32 @@ def nextVersion(version)
     current_version.reverse.join('.')
   end # outermost if
 end
+
+##############
+# Refactor 3 #
+##############
+
+def handle_increment(array, index)
+  array[index] = '0'
+  array[index+1] = (array[index+1].to_i + 1).to_s
+end
+
+def nextVersion(version)
+  current_version = version.split('.').reverse;
+
+  if version.split('.').length == 1
+    (version.to_i + 1).to_s
+  else # ITERATE
+    current_version.each.with_index do |n,i|
+      if i == 0
+        current_version[i] = (n.to_i + 1).to_s
+        handle_increment(current_version, i) if current_version[i] == '10'
+      else
+        if n == '10'
+          handle_increment(current_version, i) if i != (current_version.length - 1)
+        end
+      end # inner if-else
+    end # each
+    current_version.reverse.join('.')
+  end # outermost if-else
+end
